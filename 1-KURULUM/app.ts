@@ -94,20 +94,46 @@
 // console.log(Person);
 
 //! ENUM
-enum Media {
-    Newspaper,
-    Newsletter,
-    Magazine,
-    Book
-}
+// enum Media {
+//     Newspaper = 1,
+//     Newsletter,
+//     Magazine,
+//     Book
+// }
+// console.log(Media.Magazine);
+// console.log(Media[3]);
 
 
 
+// enum PrintMedia {
+//     Newspaper = "NEWSPAPER",
+//     Newsletter = "NEWSLETTER",
+//     Magazine = "MAGAZİNE",
+//     Book = "BOOK"
+// }
 
+// console.log(PrintMedia.Newspaper);
+// console.log(PrintMedia['Newsletter']);
 
+//! UNİON
+// let code: string | number | boolean = "123"
 
+// console.log(code);
 
+//! ANY
 
+// let someThing: any = "Hello"
+
+// someThing = 45
+// someThing = true
+// someThing = {
+//     firstName: 'Reso',
+//     lastName: 'Cmgz'
+// }
+// console.log(someThing);
+
+let arr: any[] = ['Reso', 454, true]
+console.log(arr);
 
 
 

@@ -132,12 +132,16 @@
 // }
 // console.log(someThing);
 
-let arr: any[] = ['Reso', 454, true]
-console.log(arr);
+// let arr: any[] = ['Reso', 454, true]
+// console.log(arr);
 
+//! Void
 
-
-
+function sayHello(): void {
+    console.log('Hi');
+    // return arguments; its false!!!
+}
+sayHello()
 
 
 

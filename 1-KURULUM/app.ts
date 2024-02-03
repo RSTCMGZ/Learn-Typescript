@@ -137,18 +137,76 @@
 
 //! Void
 
-function sayHello(): void {
-    console.log('Hi');
-    // return arguments; its false!!!
-}
-sayHello()
+// function sayHello(): void {
+//     console.log('Hi');
+//     // return arguments; its false!!!
+// }
+// sayHello()
+
+//! Never
+// function throwError(errorMsg: string): never {
+//     throw new Error(errorMsg)
+// }
+// throwError('hata')
 
 
+// let something : void = undefined
+// let nothing : never = null
+// let nothing : never = undefined
+//!Inference
+// let sayac = 0;
+// // let sayac:number =0
+// console.log(typeof (sayac));
 
 
+// function increment(counter: number) {
+//     return counter++
+// }
 
+// function increment(counter: number): number {
+//     return counter++
+// }
 
+// let a = "some text"
+// let b = 123
 
+// a=b
+// function sum(a: number, b: number) {
+//     return a + b
+// }
 
+// let total: number = sum(20, 30)
 
+// let total: string = sum(20, 30) //it's false!
 
+//! Assertion
+
+// let code: any = 123
+
+// let empCode = <number>code
+// console.log(typeof (empCode));
+
+// interface Employee {
+//     name: string,
+//     code: number,
+// }
+
+// let employee = <Employee>{}
+
+// console.log(typeof (employee));
+
+// employee.name = 'Reso'
+// console.log(employee);
+//! IF/ELSE
+let x: number = 15
+let y: number = 25
+
+// if (x > y) {
+//     console.log("x y'den büyüktür");
+// } else if (x < y) {
+//     console.log("x y'den küçüktür");
+// } else {
+//     console.log("x y'ye eşittir");
+// }
+
+x > y ? console.log("x y'den büyüktür") : console.log("x y'den küçüktür veya eşittir");

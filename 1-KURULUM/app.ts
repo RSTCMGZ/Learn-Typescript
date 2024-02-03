@@ -198,8 +198,8 @@
 // employee.name = 'Reso'
 // console.log(employee);
 //! IF/ELSE
-let x: number = 15
-let y: number = 25
+// let x: number = 15
+// let y: number = 25
 
 // if (x > y) {
 //     console.log("x y'den büyüktür");
@@ -209,4 +209,223 @@ let y: number = 25
 //     console.log("x y'ye eşittir");
 // }
 
-x > y ? console.log("x y'den büyüktür") : console.log("x y'den küçüktür veya eşittir");
+// x > y ? console.log("x y'den büyüktür") : console.log("x y'den küçüktür veya eşittir");
+
+//! SWITCH CASE
+// let day: number = 2;
+// switch (day) {
+//     case 0:
+//         console.log('Pazar');
+//         break
+//     case 1:
+//         console.log('Pazartesi');
+//         break
+//     case 2:
+//         console.log('Salı');
+//         break
+//     case 3:
+//         console.log('Çarşamba');
+//         break
+//     case 4:
+//         console.log('Perşembe');
+//         break
+//     case 5:
+//         console.log('Cuma');
+//         break
+//     case 6:
+//         console.log('Cumartesi');
+//         break
+//     default:
+//         console.log('Böyle bir gün yok');
+//         break
+// }
+//! FOR
+// for (let i = 0; i < 3; i++) {
+//     console.log("i değerim:", i);
+// }
+
+// let arr = [10, 20, 30, 40]
+
+// for (let i of arr) {
+//     console.log(i);
+// }
+// let str = "Rst Cmgz"
+// for (let i of str) {
+//     console.log(i);
+// }
+
+// for (let i in arr) {
+//     console.log(i);
+// }
+//! While
+
+// let counter = 0
+
+// while (counter < 5) {
+//     console.log(counter);
+//     counter++
+//     if (counter == 3) {
+//         break
+//     }
+// }
+
+// do {
+//     console.log(counter);
+//     counter++
+// } while (counter < 5)
+//! Function
+
+// function add(a: number, b: number): number {
+//     return a + b
+// }
+
+// let toplam = add(5, 20)
+
+// console.log(typeof (toplam));
+
+// function bastir() {
+//     console.log("rst cmgz");
+//     return 35
+// }
+
+// let degisken = bastir()
+// console.log(degisken);
+// function birlestir(ad: string, soyad: string): string {
+//     return ad + ' ' + soyad
+// }
+
+// let degisken = birlestir('rst', 'cmgz')
+
+// console.log(degisken);
+
+//? Default function
+// function birlestir(ad: string, soyad: string = "CMGZ"): string {
+//     return ad + ' ' + soyad
+// }
+
+// let degisken = birlestir('rst')
+
+// console.log(degisken);
+//! Optional Parameters
+
+// function carpim(a: number, b: number, c?: number) {
+//     if (typeof c !== 'undefined') {
+//         return a * b * c
+//     }
+//     return a * b
+// }
+// let degisken = carpim(5, 10, 3)
+
+// console.log(degisken);
+//? Arrow function
+
+// function carpim(a: number, b: number): number {
+
+//     return a * b
+// }
+
+// let carpim = (a: number, b: number): number => {
+//     return a * b
+// }
+
+// let degisken = carpim(4, 6)
+// console.log(degisken);
+
+// let bastir = () => {
+//     console.log('rst cmgz');
+// }
+// bastir()
+//! Function overloading
+
+// function add(a: number, b: number): number {
+//     return a + b
+// }
+// let degisken = add(4, 5)
+// console.log(degisken);
+
+// function add(a: string, b: string): string
+// function add(a: number, b: number): number
+
+
+// function add(a: any, b: any): any {
+//     return a + b
+// }
+// // let degisken = add('rst', ' cmgz')
+// let degisken = add(5, 8)
+// console.log(degisken);
+//! Rest Parameters
+
+// function toplam(a: string, ...numbers: number[]): number {
+//     let total = 0
+//     numbers.forEach((num) => total += num)
+//     return total
+// }
+
+// console.log(toplam("rst", 20, 30));
+
+// function birlestir(message: string, ...names: string[]) {
+//     console.log(message + " " + names.join(","));
+// }
+// birlestir("Merhaba", "Resat", "Mehmet", "Tugba")
+
+//! CLASS
+
+// class Person {
+//     id: number;
+//     firstName: string;
+//     lastName: string;
+
+//     constructor(id: number, firstName: string, lastName: string) {
+//         this.id = id;
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+
+//     getFullName() {
+//         return `${this.firstName} ${this.lastName}`
+//     }
+// }
+
+// let kisiBilgim = new Person(43, 'Resat', 'CMGZ')
+
+// console.log(kisiBilgim);
+// console.log(kisiBilgim.getFullName);
+//! Access Modifiers
+// class Person {
+//     protected id: number;
+//     firstName: string;
+//     lastName: string;
+
+//     constructor(id: number, firstName: string, lastName: string) {
+//         this.id = id;
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+
+//     getFullName() {
+//         return `${this.firstName} ${this.lastName}`
+//     }
+// }
+
+// let kisiBilgim = new Person(43, 'Resat', 'CMGZ')
+// console.log(kisiBilgim);
+//! Readonly
+// class Person {
+//     readonly id: number;
+//     firstName: string;
+//     lastName: string;
+
+//     constructor(id: number, firstName: string, lastName: string) {
+//         this.id = id;
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+
+//     getFullName() {
+//         return `${this.firstName} ${this.lastName}`
+//     }
+// }
+
+// let kisiBilgim = new Person(43, 'Resat', 'CMGZ')
+// kisiBilgim.id = 5
+// console.log(kisiBilgim.id);

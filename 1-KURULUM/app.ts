@@ -70,10 +70,36 @@
 // employee = [[1, 'steve'], [2, 'bill'], [3, 'jeff']]
 //! Object Data-Type
 
-let
+// type Person = {
+//     firstName: string,
+//     lastName: string,
+//     age: number,
+//     jobTitle: string
+// }
+// let instrustor: Person;
 
+// instrustor = {
+//     firstName: 'Reso',
+//     lastName: 'Cmgz',
+//     age: 29,
+//     jobTitle: 'Software Instructor'
+// }
+// console.log(instrustor.age);
+// let Person = {
+//     firstName: 'Reso',
+//     lastName: 'Cmgz',
+//     age: 29,
+//     jobTitle: 'Software Instructor'
+// }
+// console.log(Person);
 
-
+//! ENUM
+enum Media {
+    Newspaper,
+    Newsletter,
+    Magazine,
+    Book
+}
 
 
 

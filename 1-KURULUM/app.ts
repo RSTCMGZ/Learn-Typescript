@@ -429,3 +429,96 @@
 // let kisiBilgim = new Person(43, 'Resat', 'CMGZ')
 // kisiBilgim.id = 5
 // console.log(kisiBilgim.id);
+//! inheritance
+// class Person {
+//     id: number;
+//     firstName: string;
+//     lastName: string;
+
+//     constructor(id: number, firstName: string, lastName: string) {
+//         this.id = id;
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+//     getFullName() {
+//         return `${this.firstName} ${this.lastName}`
+//     }
+// }
+
+// class Employee extends Person {
+//     constructor(
+//         id: number,
+//         firstName: string,
+//         lastName: string) {
+//         super(id, firstName, lastName)
+//     }
+// }
+
+// let employee = new Employee(29, 'Rst', 'Cmgz')
+
+// console.log(employee.getFullName());
+
+
+// let kisiBilgim = new Person(43, 'Resat', 'CMGZ')
+// kisiBilgim.id = 5
+// console.log(kisiBilgim.id);
+//! Static Methods
+
+// class Circle {
+//     static pi: number = 3.14
+//     pi = 3;
+
+//     constructor() {
+//         this.pi++
+//         Circle.pi++
+//     }
+
+//     static hesapla(yaricap: number) {
+//         return this.pi * yaricap * yaricap
+//     }
+// }
+
+// let objem = new Circle()
+// let objem2 = new Circle()
+
+// console.log(objem.pi);
+
+// console.log(Circle.pi);
+// console.log(Circle.hesapla(5));
+//! Abstract Class
+
+abstract class Department {
+    constructor(public name: string) { }
+
+    printName(): void {
+        console.log("Department name: " + this.name);
+
+    }
+
+
+    abstract printMeeting(): void;
+    abstract generateReports(): void;
+}
+
+class AccountingDepartment extends Department {
+
+    constructor() {
+        super("Accounting and Auditing")
+    }
+
+    printMeeting(): void {
+        console.log("The Accounting Department meets each Monday at 10am.");
+    }
+
+    generateReports(): void {
+        console.log("Generating accounting repots...");
+    }
+}
+
+
+
+let department: Department
+department = new AccountingDepartment()
+department.printName()
+department.printMeeting()
+department.generateReports()

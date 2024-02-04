@@ -487,38 +487,360 @@
 // console.log(Circle.hesapla(5));
 //! Abstract Class
 
-abstract class Department {
-    constructor(public name: string) { }
+// abstract class Department {
+//     constructor(public name: string) { }
 
-    printName(): void {
-        console.log("Department name: " + this.name);
+//     printName(): void {
+//         console.log("Department name: " + this.name);
 
+//     }
+
+
+//     abstract printMeeting(): void;
+//     abstract generateReports(): void;
+// }
+
+// class AccountingDepartment extends Department {
+
+//     constructor() {
+//         super("Accounting and Auditing")
+//     }
+
+//     printMeeting(): void {
+//         console.log("The Accounting Department meets each Monday at 10am.");
+//     }
+
+//     generateReports(): void {
+//         console.log("Generating accounting repots...");
+//     }
+// }
+
+// let department: Department
+// department = new AccountingDepartment()
+// department.printName()
+// department.printMeeting()
+// department.generateReports()
+
+
+//! Interface
+
+// interface Person {
+//     firstName: string,
+//     lastName: string
+// }
+
+// function getFullName(person: Person) {
+//     return `${person.firstName} ${person.lastName}`
+// }
+
+// let person = {
+//     firstName: 'Rst',
+//     lastName: 'Cmgz',
+//     age: 29
+// }
+// console.log(getFullName(person));
+
+//! Optional
+// interface Person {
+//     firstName: string,
+//     lastName: string,
+//     middleName?: string
+// }
+
+// function getFullName(person: Person) {
+//     if (person.middleName) {
+//         return `${person.firstName} ${person.middleName} ${person.lastName}`
+//     }
+//     return `${person.firstName} ${person.lastName}`
+// }
+
+// let person = {
+//     firstName: 'Rst',
+//     lastName: 'Cmgz',
+//     middleName: 'resat',
+//     age: 29
+// }
+// console.log(getFullName(person));
+
+//! Readonly
+
+// interface Person {
+//     firstName: string,
+//     lastName: string,
+//     middleName?: string
+// }
+
+// function getFullName(person: Person) {
+//     if (person.middleName) {
+//         return `${person.firstName} ${person.middleName} ${person.lastName}`
+//     }
+//     return `${person.firstName} ${person.lastName}`
+// }
+
+// let person: Person = {
+//     firstName: 'Rst',
+//     lastName: 'Cmgz'
+// }
+
+// // person.firstName = "Resat"
+
+// console.log(getFullName(person));
+
+//! Interface Function type
+// interface StringFormat {
+//     (str: string, isUpper: boolean): string
+// }
+
+// let format: StringFormat
+
+// format = function (str: string, isUpper: boolean) {
+//     return isUpper ? str.toLocaleUpperCase() : str.toLocaleLowerCase()
+// }
+
+// console.log(format('Resat Cmgz', true));
+
+//! Extend
+
+// interface IPerson {
+//     name: string,
+//     gender: string
+// }
+
+// interface IEmployee extends IPerson {
+//     empNumber: number;
+// }
+
+// interface IWorker extends IPerson {
+//     empDepartment: string;
+// }
+
+// let employeeDepartment: IWorker = {
+//     empDepartment: "Software Department",
+//     gender: 'Male',
+//     name: 'Rst'
+// }
+// let employee: IEmployee = {
+//     empNumber: 1,
+//     gender: 'Male',
+//     name: 'Rst'
+// }
+// console.log(employeeDepartment);
+// console.log(employee);
+//!  implement
+
+// interface IPerson {
+//     name: string;
+//     gender: string
+// }
+// class Employee implements IPerson {
+//     empNumber: number;
+//     name: string;
+//     gender: string;
+//     constructor(empNumber: number, name: string, gender: string) {
+//         this.empNumber = empNumber;
+//         this.name = name;
+//         this.gender = gender;
+//     }
+// }
+
+// let employee = new Employee(5, 'Rst', 'Male')
+
+// console.log(employee);
+//! Type intersection
+// interface BusinessPartner {
+//     name: string;
+//     credit: number;
+// }
+// interface Identity {
+//     name: string;
+//     id: number
+// }
+// interface Contact {
+//     email: string
+//     phone: string
+// }
+// type Employee = Identity & Contact
+
+// let kisim: Employee = {
+//     id: 54,
+//     name: 'Rst',
+//     email: 'sadasd@hotmail.com',
+//     phone: '121212'
+// }
+
+// console.log(kisim);
+// type Customer = BusinessPartner & Contact
+// let müsterim: Customer = {
+//     credit: 54,
+//     email: 'sadasd@hotmail.com',
+//     name: 'Rst',
+//     phone: '4545454'
+// }
+// console.log(müsterim);
+//! Type Guard
+// type tip = string | number;
+
+// function add(a: tip, b: tip) {
+//     if (typeof a === 'number' && typeof b === 'number') {
+//         return a + b
+//     }
+//     if (typeof a === 'string' && typeof b === 'string') {
+//         return a.concat(b)
+//     }
+//     throw new Error('Lütfen doğru formatta data gönderin');
+// }
+
+// console.log(add(5, 6))
+// class Customer {
+//     isCreditAllowed(): boolean {
+//         return true
+//     }
+// }
+// class Supplier {
+//     isInShortList(): boolean {
+//         return true
+//     }
+// }
+
+// type BusinessPartner = Customer | Supplier
+
+//! Generics
+
+// function getRandomNumber(items: number[]): number {
+//     let randomIndex = Math.floor(Math.random() * items.length)
+//     return items[randomIndex]
+// }
+// let numbers = [1, 5, 74, 29, 50]
+
+// console.log(getRandomNumber(numbers));
+
+// function getRandomString(items: string[]): string {
+//     let randomIndex = Math.floor(Math.random() * items.length)
+//     return items[randomIndex]
+// }
+// let string = ['Rst', 'Mehmet', 'Hamdi']
+
+// console.log(getRandomString(string));
+
+
+
+// function getRandomElement(items: any[]): any {
+//     let randomIndex = Math.floor(Math.random() * items.length)
+//     return items[randomIndex]
+// }
+// let string = ['Rst', 'Mehmet', 'Hamdi']
+// let numbers = [1, 5, 74, 29, 50]
+
+// console.log(getRandomElement(string));
+// console.log(getRandomElement(numbers));
+
+
+
+// let degiskenlerim = [true, false, true]
+
+// function getRandomElement<T>(items: T[]): T {
+//     let randomIndex = Math.floor(Math.random() * items.length)
+//     return items[randomIndex]
+// }
+// let string = ['Rst', 'Mehmet', 'Hamdi']
+// let numbers = [1, 5, 74, 29, 50]
+
+// console.log(getRandomElement<string>(string));
+// console.log(getRandomElement<number>(numbers));
+// console.log(getRandomElement<boolean>(degiskenlerim));
+//! Generics Constraints
+
+// function merge<U extends object, V extends object>(obj1: U, obj2: V) {
+//     return {
+//         ...obj1,
+//         ...obj2
+//     }
+// }
+
+// let person = merge(
+//     { name: "Rst" },
+//     // { age: 29 }
+//     29
+// )
+
+// console.log(person);
+//! interface generics
+// interface Months<U, V> {
+//     key: U,
+//     value: V
+// }
+
+// let month: Months<number, string> = {
+//     key: 1,
+//     value: 'January'
+// }
+// // console.log(month);
+
+// interface Collection<T> {
+//     add(o: T): void;
+//     remove(o: T): void
+// }
+
+// class List<T> implements Collection<T>{
+//     private items: T[] = []
+//     add(o: T): void {
+//         this.items.push(o)
+//         console.log(this.items);
+
+//     }
+
+//     remove(o: T): void {
+//         let index = this.items.indexOf(o)
+//         if (index > -1) {
+//             this.items.splice(index, 1)
+//         }
+//     }
+// }
+
+// let list = new List<number>()
+
+// for (let i = 0; i < 10; i++) {
+//     list.add(i)
+// }
+//! Class generics
+class Stack<T>{
+
+    private elements: T[] = []
+    constructor(private size: number) {
+    }
+    isEmpty(): boolean {
+        return this.elements.length === 0
+    }
+    isFull(): boolean {
+        return this.elements.length === this.size
     }
 
-
-    abstract printMeeting(): void;
-    abstract generateReports(): void;
+    push(element: T): void {
+        if (this.elements.length === this.size) {
+            throw new Error('The stack is overflow!')
+        }
+        this.elements.push(element)
+    }
+    pop(): T {
+        if (this.elements.length == 0) {
+            throw new Error('The stack is empty!')
+        }
+        return this.elements.pop();
+    }
 }
 
-class AccountingDepartment extends Department {
+function randBetween(low: number, hight: number): number {
+    return Math.floor(Math.random() * (hight - low + 1) + low)
+}
+let numbers = new Stack<number>(5)
 
-    constructor() {
-        super("Accounting and Auditing")
-    }
-
-    printMeeting(): void {
-        console.log("The Accounting Department meets each Monday at 10am.");
-    }
-
-    generateReports(): void {
-        console.log("Generating accounting repots...");
-    }
+while (!numbers.isFull()) {
+    let n = randBetween(1, 10)
+    console.log(`Push ${n} into the stack.`);
+    numbers.push(n)
 }
 
-
-
-let department: Department
-department = new AccountingDepartment()
-department.printName()
-department.printMeeting()
-department.generateReports()
+while (!numbers.isEmpty()) {
+    let n = numbers.pop()
+    console.log(`Pop ${n} into the stack.`);
+}
